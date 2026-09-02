@@ -1148,39 +1148,105 @@ td {
 <script>
 
 /* =====================================================
-   UPDATE DATA
+   UPDATE DATA OPERASI
 ===================================================== */
 
 function openUpdate() {
+    const modal = document.getElementById("updateModal");
 
-    document.getElementById("updateModal").style.display = "flex";
-
+    if (modal) {
+        modal.style.display = "flex";
+    }
 }
 
 
 function closeUpdate() {
+    const modal = document.getElementById("updateModal");
 
-    document.getElementById("updateModal").style.display = "none";
-
+    if (modal) {
+        modal.style.display = "none";
+    }
 }
 
 
+/* =====================================================
+   SIMPAN SEMUA DATA
+===================================================== */
+
 function saveUpdate() {
 
-    const ac =
-        document.getElementById("inputAC").value;
+    // Senarai semua field dalam popup
+    const fields = [
+        "inputAC",
+        "inputPP",
+        "inputBA",
 
-    const pp =
-        document.getElementById("inputPP").value;
+        "inputBasAC",
+        "inputBasPP",
+        "inputBasBA",
 
-    const ba =
-        document.getElementById("inputBA").value;
+        "inputVanAC",
+        "inputVanPP",
+        "inputVanBA",
+
+        "inputShift",
+        "inputDirect",
+        "inputSplit",
+
+        "inputSpareBC",
+        "inputSpareVC",
+
+        "inputRevenue",
+        "inputPassenger",
+
+        "inputMinor",
+        "inputRTAX",
+        "inputVanROD",
+
+        "inputABS",
+        "inputMC",
+        "inputEL",
+        "inputKHO"
+    ];
 
 
-    // OPERASI
-    document.getElementById("ac").innerText = ac;
-    document.getElementById("pp").innerText = pp;
-    document.getElementById("ba").innerText = ba;
+    // Simpan semua input
+    fields.forEach(function(id) {
+
+        const input = document.getElementById(id);
+
+        if (input) {
+            localStorage.setItem(
+                id,
+                input.value
+            );
+        }
+
+    });
+
+
+    // =================================================
+    // UPDATE OPERASI
+    // =================================================
+
+    const ac = document.getElementById("inputAC");
+    const pp = document.getElementById("inputPP");
+    const ba = document.getElementById("inputBA");
+
+
+    if (ac && document.getElementById("ac")) {
+        document.getElementById("ac").innerText = ac.value;
+    }
+
+
+    if (pp && document.getElementById("pp")) {
+        document.getElementById("pp").innerText = pp.value;
+    }
+
+
+    if (ba && document.getElementById("ba")) {
+        document.getElementById("ba").innerText = ba.value;
+    }
 
 
     // Tutup popup
@@ -1188,32 +1254,84 @@ function saveUpdate() {
 
 
     // Mesej
-    alert("Data operasi berjaya dikemaskini!");
-
-}
-    const ac =
-        document.getElementById("inputAC").value;
-
-    const pp =
-        document.getElementById("inputPP").value;
-
-    const ba =
-        document.getElementById("inputBA").value;
-
-
-    document.getElementById("ac").innerText = ac;
-
-    document.getElementById("pp").innerText = pp;
-
-    document.getElementById("ba").innerText = ba;
-
-
-    closeUpdate();
-
-    alert("Data berjaya dikemaskini!");
+    alert("Semua data operasi berjaya dikemaskini!");
 
 }
 
+
+/* =====================================================
+   LOAD DATA YANG TELAH DISIMPAN
+===================================================== */
+
+function loadSavedData() {
+
+    const fields = [
+        "inputAC",
+        "inputPP",
+        "inputBA",
+
+        "inputBasAC",
+        "inputBasPP",
+        "inputBasBA",
+
+        "inputVanAC",
+        "inputVanPP",
+        "inputVanBA",
+
+        "inputShift",
+        "inputDirect",
+        "inputSplit",
+
+        "inputSpareBC",
+        "inputSpareVC",
+
+        "inputRevenue",
+        "inputPassenger",
+
+        "inputMinor",
+        "inputRTAX",
+        "inputVanROD",
+
+        "inputABS",
+        "inputMC",
+        "inputEL",
+        "inputKHO"
+    ];
+
+
+    fields.forEach(function(id) {
+
+        const input = document.getElementById(id);
+        const saved = localStorage.getItem(id);
+
+        if (input && saved !== null) {
+            input.value = saved;
+        }
+
+    });
+
+
+    // Update AC / PP / BA pada dashboard
+    const ac = localStorage.getItem("inputAC");
+    const pp = localStorage.getItem("inputPP");
+    const ba = localStorage.getItem("inputBA");
+
+
+    if (ac && document.getElementById("ac")) {
+        document.getElementById("ac").innerText = ac;
+    }
+
+
+    if (pp && document.getElementById("pp")) {
+        document.getElementById("pp").innerText = pp;
+    }
+
+
+    if (ba && document.getElementById("ba")) {
+        document.getElementById("ba").innerText = ba;
+    }
+
+}
 
 
 /* =====================================================
@@ -1222,16 +1340,16 @@ function saveUpdate() {
 
 function searchRoute() {
 
-    const input =
-        document
-        .getElementById("searchRoute")
-        .value
-        .toLowerCase();
+    const searchBox = document.getElementById("searchRoute");
+
+    if (!searchBox) return;
+
+
+    const input = searchBox.value.toLowerCase();
 
 
     const rows =
-        document
-        .querySelectorAll("#routeTable tr");
+        document.querySelectorAll("#routeTable tr");
 
 
     rows.forEach(function(row) {
@@ -1255,7 +1373,6 @@ function searchRoute() {
 }
 
 
-
 /* =====================================================
    EDIT ROUTE
 ===================================================== */
@@ -1269,6 +1386,34 @@ function editRoute(route) {
     );
 
 }
+
+
+/* =====================================================
+   TUTUP POPUP BILA KLIK LUAR
+===================================================== */
+
+window.addEventListener("click", function(event) {
+
+    const modal =
+        document.getElementById("updateModal");
+
+
+    if (event.target === modal) {
+        closeUpdate();
+    }
+
+});
+
+
+/* =====================================================
+   LOAD DATA BILA WEBSITE DIBUKA
+===================================================== */
+
+window.addEventListener("DOMContentLoaded", function() {
+
+    loadSavedData();
+
+});
 
 </script>
 
