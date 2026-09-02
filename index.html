@@ -2,298 +2,1310 @@
 <html lang="ms">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dashboard Operasi Harian BCV</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+<title>Dashboard Operasi Harian - Batu Caves</title>
 
-        /* =========================
-           ASAS WEBSITE
-           ========================= */
+<style>
 
-        * {
-            box-sizing: border-box;
-        }
+/* =====================================================
+   ASAS
+===================================================== */
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #eef3fb;
-            color: #102a5c;
-        }
+* {
+    box-sizing: border-box;
+}
 
-
-        /* =========================
-           HEADER
-           ========================= */
-
-        .top-bar {
-            background: #d9272e;
-            color: white;
-            padding: 10px 20px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #12357c, #1d4fb3);
-            color: white;
-            padding: 25px;
-        }
-
-        .header h1 {
-            margin: 0;
-            font-size: 30px;
-        }
-
-        .header p {
-            margin: 8px 0 0;
-            opacity: 0.9;
-        }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #15284b;
+}
 
 
-        /* =========================
-           KANDUNGAN
-           ========================= */
+/* =====================================================
+   LAYOUT UTAMA
+===================================================== */
 
-        .container {
-            padding: 25px;
-            max-width: 1600px;
-            margin: auto;
-        }
-
-        .section-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 10px 0 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+.app {
+    display: flex;
+    min-height: 100vh;
+}
 
 
-        /* =========================
-           KAD KPI
-           ========================= */
+/* =====================================================
+   SIDEBAR
+===================================================== */
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
+.sidebar {
+    width: 245px;
+    background: #123b7a;
+    color: white;
+    padding: 25px 16px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
 
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            border-top: 4px solid #1d4fb3;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
+.logo {
+    padding: 10px;
+    margin-bottom: 30px;
+}
 
-        .card-title {
-            font-size: 13px;
-            color: #666;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
+.logo-icon {
+    font-size: 38px;
+}
 
-        .number {
-            font-size: 38px;
-            font-weight: bold;
-            margin-top: 8px;
-            color: #12357c;
-        }
+.logo-title {
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 5px;
+}
 
-        .description {
-            margin-top: 5px;
-            color: #666;
-        }
+.logo-subtitle {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 4px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu button {
+    border: none;
+    background: transparent;
+    color: white;
+    padding: 14px 16px;
+    text-align: left;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.menu button:hover,
+.menu button.active {
+    background: #2864d7;
+}
+
+.operations-box {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 20px;
+    padding: 20px;
+    background: rgba(255,255,255,0.10);
+    border-radius: 15px;
+}
+
+.operations-box strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.operations-box small {
+    line-height: 1.6;
+    opacity: 0.85;
+}
 
 
-        /* =========================
-           KAD BESAR
-           ========================= */
+/* =====================================================
+   MAIN
+===================================================== */
 
-        .wide-cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .wide-card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            border-top: 4px solid #d9272e;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .wide-number {
-            font-size: 28px;
-            font-weight: bold;
-            margin-top: 10px;
-            color: #12357c;
-        }
+.main {
+    margin-left: 245px;
+    width: calc(100% - 245px);
+    padding: 28px;
+}
 
 
-        /* =========================
-           RESPONSIVE
-           ========================= */
+/* =====================================================
+   HEADER
+===================================================== */
 
-        @media (max-width: 800px) {
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
 
-            .cards {
-                grid-template-columns: 1fr;
-            }
+.header h1 {
+    margin: 0;
+    font-size: 30px;
+}
 
-            .wide-cards {
-                grid-template-columns: 1fr;
-            }
+.header p {
+    margin: 6px 0 0;
+    color: #667085;
+}
 
-            .container {
-                padding: 15px;
-            }
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-            .header h1 {
-                font-size: 24px;
-            }
+.date-box,
+.status-box,
+.user-box {
+    background: white;
+    border: 1px solid #e2e7f0;
+    border-radius: 12px;
+    padding: 13px 18px;
+}
 
-        }
+.status-box {
+    color: #0b7a53;
+    font-weight: bold;
+}
 
-    </style>
+.user-box {
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.btn {
+    border: 1px solid #2b63d9;
+    background: white;
+    color: #1d56c7;
+    padding: 11px 17px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #eef4ff;
+}
+
+.btn-primary {
+    background: #0b9b70;
+    border-color: #0b9b70;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #087c5a;
+}
+
+
+/* =====================================================
+   KPI
+===================================================== */
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e5e9f1;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+
+.card-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #667085;
+    text-transform: uppercase;
+}
+
+.card-number {
+    font-size: 34px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #123b7a;
+}
+
+.card-detail {
+    font-size: 14px;
+    color: #667085;
+}
+
+
+/* =====================================================
+   DUA KAD BESAR
+===================================================== */
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.big-card {
+    min-height: 130px;
+}
+
+.big-number {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+
+/* =====================================================
+   ROUTE SECTION
+===================================================== */
+
+.route-card {
+    background: white;
+    border: 1px solid #e5e9f1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+
+.route-header {
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.route-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.route-tools {
+    display: flex;
+    gap: 8px;
+}
+
+.search {
+    padding: 10px 13px;
+    border: 1px solid #d9dfeb;
+    border-radius: 9px;
+    width: 260px;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #f8faff;
+    padding: 13px;
+    text-align: left;
+    font-size: 12px;
+    color: #667085;
+}
+
+td {
+    padding: 13px;
+    border-top: 1px solid #edf0f5;
+    font-size: 14px;
+}
+
+.route-name {
+    font-weight: bold;
+    color: #123b7a;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.bus {
+    background: #e7efff;
+    color: #2059c7;
+}
+
+.drt {
+    background: #e5f8f0;
+    color: #087c5a;
+}
+
+.normal {
+    color: #07945f;
+    font-weight: bold;
+}
+
+.warning {
+    color: #d98200;
+    font-weight: bold;
+}
+
+.edit-route {
+    padding: 7px 10px;
+    border: 1px solid #b9cdf5;
+    background: white;
+    color: #1758c7;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   BOTTOM CARDS
+===================================================== */
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.bottom-number {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    margin-top: 15px;
+    padding: 13px 18px;
+    background: #eaf2ff;
+    border: 1px solid #d3e1fb;
+    border-radius: 10px;
+    color: #35527e;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   MODAL KEMASKINI
+===================================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-box {
+    width: 450px;
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.modal-box h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #d8deea;
+    border-radius: 8px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 70px;
+        padding: 15px 8px;
+    }
+
+    .logo-title,
+    .logo-subtitle,
+    .menu button span,
+    .operations-box {
+        display: none;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .main {
+        margin-left: 70px;
+        width: calc(100% - 70px);
+        padding: 15px;
+    }
+
+    .header {
+        display: block;
+    }
+
+    .header-right {
+        margin-top: 15px;
+        flex-wrap: wrap;
+    }
+
+    .kpi-grid,
+    .two-column,
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .route-header {
+        display: block;
+    }
+
+    .route-tools {
+        margin-top: 10px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .route-card {
+        overflow-x: auto;
+    }
+
+}
+
+</style>
+
 </head>
 
 
 <body>
 
 
-    <!-- BAR MERAH -->
-    <div class="top-bar">
-        DASHBOARD OPERASI HARIAN
+<div class="app">
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <div class="logo-icon">🚌</div>
+
+        <div class="logo-title">
+            BATU CAVES
+        </div>
+
+        <div class="logo-subtitle">
+            DEPOT DASHBOARD
+        </div>
+
     </div>
 
 
-    <!-- HEADER -->
-    <div class="header">
+    <div class="menu">
 
-        <h1>BCV</h1>
+        <button class="active">
+            🏠 <span>Ringkasan</span>
+        </button>
+
+        <button>
+            🛣️ <span>Laluan</span>
+        </button>
+
+        <button>
+            🚌 <span>Kenderaan</span>
+        </button>
+
+        <button>
+            👥 <span>Agihan</span>
+        </button>
+
+        <button>
+            ⚠️ <span>ROD & Insiden</span>
+        </button>
+
+        <button>
+            🕒 <span>Kehadiran</span>
+        </button>
+
+        <button>
+            📄 <span>Laporan</span>
+        </button>
+
+        <button>
+            ⚙️ <span>Tetapan</span>
+        </button>
+
+    </div>
+
+
+    <div class="operations-box">
+
+        <strong>🚍 Batu Caves Operations</strong>
+
+        <small>
+            Keep Moving,<br>
+            Keep Improving ❤️
+        </small>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <div>
+
+        <h1>Dashboard Operasi Harian</h1>
 
         <p>
-            Depot BCV &nbsp; | &nbsp;
-            2 September 2026 &nbsp; | &nbsp;
-            Shift / Direct / Split: 55 / 0 / 0
+            Depot Batu Caves
         </p>
 
     </div>
 
 
-    <!-- KANDUNGAN -->
-    <div class="container">
+    <div class="header-right">
 
-
-        <!-- RINGKASAN -->
-        <div class="section-title">
-            Ringkasan Operasi
+        <div class="date-box">
+            📅 2 September 2026
         </div>
 
-
-        <div class="cards">
-
-
-            <!-- AC PP BA -->
-            <div class="card">
-
-                <div class="card-title">
-                    AC / PP / BA
-                </div>
-
-                <div class="number">
-                    53
-                </div>
-
-                <div class="description">
-                    PP: 55 &nbsp; | &nbsp; BA: 74
-                </div>
-
-            </div>
-
-
-            <!-- KENDERAAN -->
-            <div class="card">
-
-                <div class="card-title">
-                    Kenderaan Operasi
-                </div>
-
-                <div class="number">
-                    53
-                </div>
-
-                <div class="description">
-                    🚌 Bas 40 &nbsp;&nbsp; 🚐 Van 13
-                </div>
-
-            </div>
-
-
-            <!-- LALUAN -->
-            <div class="card">
-
-                <div class="card-title">
-                    Jumlah Laluan
-                </div>
-
-                <div class="number">
-                    33
-                </div>
-
-                <div class="description">
-                    BUS 13 &nbsp;&nbsp; DRT 20
-                </div>
-
-            </div>
-
-
+        <div class="status-box">
+            🔵 DRY RUN
         </div>
 
-
-        <!-- BAS / VAN -->
-
-        <div class="wide-cards">
-
-
-            <div class="wide-card">
-
-                <div class="card-title">
-                    Bas AC / PP / BA
-                </div>
-
-                <div class="wide-number">
-                    40 / 40 / 47
-                </div>
-
-            </div>
-
-
-            <div class="wide-card">
-
-                <div class="card-title">
-                    Van AC / PP / BA
-                </div>
-
-                <div class="wide-number">
-                    13 / 15 / 34
-                </div>
-
-            </div>
-
-
+        <div class="user-box">
+            👤 BCV Team
         </div>
 
+        <button class="btn" onclick="openUpdate()">
+            🔄 Kemaskini Data
+        </button>
+
+        <button class="btn btn-primary" onclick="openUpdate()">
+            ＋ Update Manual
+        </button>
 
     </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     KPI
+===================================================== -->
+
+<div class="kpi-grid">
+
+
+    <div class="card">
+
+        <div class="card-title">
+            AC / PP / BA
+        </div>
+
+        <div class="card-number" id="ac">
+            53
+        </div>
+
+        <div class="card-detail">
+            PP: <span id="pp">55</span>
+            &nbsp; | &nbsp;
+            BA: <span id="ba">74</span>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-title">
+            Kenderaan Operasi
+        </div>
+
+        <div class="card-number" id="vehicles">
+            53
+        </div>
+
+        <div class="card-detail">
+            🚌 Bas 40
+            &nbsp; | &nbsp;
+            🚐 Van 13
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-title">
+            Jumlah Laluan
+        </div>
+
+        <div class="card-number">
+            33
+        </div>
+
+        <div class="card-detail">
+            BUS 13
+            &nbsp; | &nbsp;
+            DRT 20
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-title">
+            Agihan Shift
+        </div>
+
+        <div class="card-number">
+            55 / 0 / 0
+        </div>
+
+        <div class="card-detail">
+            Shift &nbsp; | &nbsp;
+            Direct &nbsp; | &nbsp;
+            Split
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     BAS / VAN
+===================================================== -->
+
+<div class="two-column">
+
+
+    <div class="card big-card">
+
+        <div class="card-title">
+            Bas AC / PP / BA
+        </div>
+
+        <div class="big-number">
+            40 / 40 / 47
+        </div>
+
+    </div>
+
+
+    <div class="card big-card">
+
+        <div class="card-title">
+            Van AC / PP / BA
+        </div>
+
+        <div class="big-number">
+            13 / 15 / 34
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     LALUAN
+===================================================== -->
+
+<div class="route-card">
+
+    <div class="route-header">
+
+        <div class="route-title">
+            🛣️ LALUAN HARI INI
+        </div>
+
+        <div class="route-tools">
+
+            <input
+                type="text"
+                id="searchRoute"
+                class="search"
+                placeholder="Cari laluan..."
+                onkeyup="searchRoute()"
+            >
+
+            <button class="btn" onclick="openUpdate()">
+                ✏️ Kemaskini
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>LALUAN</th>
+                <th>JENIS</th>
+                <th>ORIGIN</th>
+                <th>DESTINASI</th>
+                <th>PLAN</th>
+                <th>AKTUAL</th>
+                <th>STATUS</th>
+                <th>TINDAKAN</th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody id="routeTable">
+
+
+            <tr>
+
+                <td class="route-name">
+                    T780
+                </td>
+
+                <td>
+                    <span class="badge bus">
+                        BUS
+                    </span>
+                </td>
+
+                <td>
+                    Batu Caves
+                </td>
+
+                <td>
+                    LRT Kelana Jaya
+                </td>
+
+                <td>
+                    3
+                </td>
+
+                <td>
+                    3
+                </td>
+
+                <td class="normal">
+                    ✓ Normal
+                </td>
+
+                <td>
+                    <button
+                        class="edit-route"
+                        onclick="editRoute('T780')"
+                    >
+                        ✏️
+                    </button>
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td class="route-name">
+                    T781
+                </td>
+
+                <td>
+                    <span class="badge bus">
+                        BUS
+                    </span>
+                </td>
+
+                <td>
+                    Batu Caves
+                </td>
+
+                <td>
+                    LRT Gombak
+                </td>
+
+                <td>
+                    2
+                </td>
+
+                <td>
+                    2
+                </td>
+
+                <td class="normal">
+                    ✓ Normal
+                </td>
+
+                <td>
+                    <button
+                        class="edit-route"
+                        onclick="editRoute('T781')"
+                    >
+                        ✏️
+                    </button>
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td class="route-name">
+                    T775B
+                </td>
+
+                <td>
+                    <span class="badge drt">
+                        DRT
+                    </span>
+                </td>
+
+                <td>
+                    Batu Caves
+                </td>
+
+                <td>
+                    Batu Caves Area
+                </td>
+
+                <td>
+                    2
+                </td>
+
+                <td>
+                    1
+                </td>
+
+                <td class="warning">
+                    ⚠ Amaran
+                </td>
+
+                <td>
+                    <button
+                        class="edit-route"
+                        onclick="editRoute('T775B')"
+                    >
+                        ✏️
+                    </button>
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td class="route-name">
+                    T779
+                </td>
+
+                <td>
+                    <span class="badge bus">
+                        BUS
+                    </span>
+                </td>
+
+                <td>
+                    Batu Caves
+                </td>
+
+                <td>
+                    Sentul
+                </td>
+
+                <td>
+                    3
+                </td>
+
+                <td>
+                    3
+                </td>
+
+                <td class="normal">
+                    ✓ Normal
+                </td>
+
+                <td>
+                    <button
+                        class="edit-route"
+                        onclick="editRoute('T779')"
+                    >
+                        ✏️
+                    </button>
+                </td>
+
+            </tr>
+
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+
+<!-- =====================================================
+     BOTTOM INFORMATION
+===================================================== -->
+
+<div class="bottom-grid">
+
+
+    <div class="card">
+
+        <div class="card-title">
+            Hasil (RM)
+        </div>
+
+        <div class="bottom-number">
+            TBA
+        </div>
+
+        <button
+            class="btn"
+            style="margin-top:10px;"
+            onclick="openUpdate()"
+        >
+            ✏️ Kemaskini
+        </button>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-title">
+            Penumpang
+        </div>
+
+        <div class="bottom-number">
+            TBA
+        </div>
+
+        <button
+            class="btn"
+            style="margin-top:10px;"
+            onclick="openUpdate()"
+        >
+            ✏️ Kemaskini
+        </button>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-title">
+            Spare BC / VC
+        </div>
+
+        <div class="bottom-number">
+            10 / 12
+        </div>
+
+        <div class="card-detail">
+            BC: 10 &nbsp; | &nbsp; VC: 12
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-title">
+            ROD & Ketidakhadiran
+        </div>
+
+        <div class="card-detail" style="margin-top:10px;">
+
+            Minor: 9<br>
+            RTAX: 2<br>
+            Van ROD: 2<br>
+            ABS: 1<br>
+            MC: 0<br>
+            EL: 0<br>
+            KHO: 0
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<div class="footer">
+
+    🔔 Pastikan semua data dikemaskini sebelum operasi bermula.
+
+</div>
+
+
+</main>
+
+</div>
+
+
+
+<!-- =====================================================
+     MODAL UPDATE
+===================================================== -->
+
+<div class="modal" id="updateModal">
+
+    <div class="modal-box">
+
+        <h2>
+            Kemaskini Data Operasi
+        </h2>
+
+        <div class="form-group">
+
+            <label>
+                AC
+            </label>
+
+            <input
+                type="number"
+                id="inputAC"
+                value="53"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                PP
+            </label>
+
+            <input
+                type="number"
+                id="inputPP"
+                value="55"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                BA
+            </label>
+
+            <input
+                type="number"
+                id="inputBA"
+                value="74"
+            >
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="btn"
+                onclick="closeUpdate()"
+            >
+                Batal
+            </button>
+
+            <button
+                class="btn btn-primary"
+                onclick="saveUpdate()"
+            >
+                Simpan
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   UPDATE DATA
+===================================================== */
+
+function openUpdate() {
+
+    document.getElementById("updateModal").style.display = "flex";
+
+}
+
+
+function closeUpdate() {
+
+    document.getElementById("updateModal").style.display = "none";
+
+}
+
+
+function saveUpdate() {
+
+    const ac =
+        document.getElementById("inputAC").value;
+
+    const pp =
+        document.getElementById("inputPP").value;
+
+    const ba =
+        document.getElementById("inputBA").value;
+
+
+    document.getElementById("ac").innerText = ac;
+
+    document.getElementById("pp").innerText = pp;
+
+    document.getElementById("ba").innerText = ba;
+
+
+    closeUpdate();
+
+    alert("Data berjaya dikemaskini!");
+
+}
+
+
+
+/* =====================================================
+   SEARCH LALUAN
+===================================================== */
+
+function searchRoute() {
+
+    const input =
+        document
+        .getElementById("searchRoute")
+        .value
+        .toLowerCase();
+
+
+    const rows =
+        document
+        .querySelectorAll("#routeTable tr");
+
+
+    rows.forEach(function(row) {
+
+        const text =
+            row.innerText.toLowerCase();
+
+
+        if (text.includes(input)) {
+
+            row.style.display = "";
+
+        } else {
+
+            row.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+
+/* =====================================================
+   EDIT ROUTE
+===================================================== */
+
+function editRoute(route) {
+
+    alert(
+        "Kemaskini laluan " +
+        route +
+        " akan dibuat di sini."
+    );
+
+}
+
+</script>
 
 
 </body>
