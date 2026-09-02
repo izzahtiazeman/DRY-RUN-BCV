@@ -52,18 +52,24 @@ input {
 }
 
 .logo {
-    padding: 8px 10px;
+    padding: 4px 8px;
     margin-bottom: 22px;
+    text-align: center;
 }
 
-.logo-icon {
-    font-size: 30px;
+.brand-logo-img {
+    display: block;
+    width: min(170px, 100%);
+    height: auto;
+    margin: 0 auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .18));
 }
 
 .logo-title {
-    font-size: 21px;
+    font-size: 16px;
     font-weight: bold;
-    margin-top: 4px;
+    margin-top: 9px;
+    letter-spacing: .4px;
 }
 
 .logo-subtitle {
@@ -92,26 +98,6 @@ input {
 .menu button:hover,
 .menu button.active {
     background: #2864d7;
-}
-
-.operations-box {
-    position: absolute;
-    left: 14px;
-    right: 14px;
-    bottom: 16px;
-    padding: 15px;
-    background: rgba(255,255,255,.10);
-    border-radius: 12px;
-}
-
-.operations-box strong {
-    display: block;
-    margin-bottom: 7px;
-}
-
-.operations-box small {
-    line-height: 1.5;
-    opacity: .85;
 }
 
 
@@ -433,7 +419,7 @@ td {
 
 .bottom-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 11px;
     margin-top: 11px;
 }
@@ -442,6 +428,77 @@ td {
     font-size: 23px;
     font-weight: bold;
     margin-top: 7px;
+}
+
+.rod-attendance-section {
+    margin-top: 11px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 8px;
+    color: #123b7a;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .25px;
+}
+
+.rod-attendance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 11px;
+}
+
+.status-panel {
+    border-top: 4px solid #f2c300;
+    min-height: 142px;
+}
+
+.status-panel .card-title {
+    margin-bottom: 9px;
+}
+
+.rod-badges {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.rod-badge {
+    padding: 7px 11px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.rod-badge.minor { background: #fff4d9; color: #8b5300; }
+.rod-badge.rtax { background: #fff0e8; color: #a84214; }
+.rod-badge.van-rod { background: #fbe9ed; color: #91202c; }
+
+.panel-note {
+    margin: 11px 0 0;
+    color: #667085;
+    font-size: 11px;
+}
+
+.attendance-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 28px;
+}
+
+.attendance-value {
+    display: block;
+    color: #123b7a;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.attendance-label {
+    color: #667085;
+    font-size: 11px;
 }
 
 .footer {
@@ -565,7 +622,8 @@ td {
         grid-template-columns: repeat(2,1fr);
     }
 
-    .bottom-grid {
+    .bottom-grid,
+    .rod-attendance-grid {
         grid-template-columns: repeat(2,1fr);
     }
 
@@ -581,7 +639,7 @@ td {
     .logo-title,
     .logo-subtitle,
     .menu button span,
-    .operations-box {
+    .brand-logo-img {
         display: none;
     }
 
@@ -605,7 +663,8 @@ td {
 
     .kpi-grid,
     .two-column,
-    .bottom-grid {
+    .bottom-grid,
+    .rod-attendance-grid {
         grid-template-columns: 1fr;
     }
 
@@ -643,10 +702,13 @@ td {
 
     <div class="logo">
 
-        <div class="logo-icon">🚌</div>
+        <img
+            class="brand-logo-img"
+            src="assets/depot-batu-caves-logo.png"
+            alt="Logo Rapid Bus Depot Batu Caves">
 
         <div class="logo-title">
-            BATU CAVES
+            RAPID BUS BATU CAVES
         </div>
 
         <div class="logo-subtitle">
@@ -689,20 +751,6 @@ td {
         <button>
             ⚙️ <span>Tetapan</span>
         </button>
-
-    </div>
-
-
-    <div class="operations-box">
-
-        <strong>
-            🚍 Batu Caves Operations
-        </strong>
-
-        <small>
-            Keep Moving,<br>
-            Keep Improving ❤️
-        </small>
 
     </div>
 
@@ -1101,61 +1149,49 @@ td {
 
     </div>
 
+</div>
 
-    <div class="card">
+<section class="rod-attendance-section" aria-labelledby="rodAttendanceTitle">
 
-        <div class="card-title">
-            ROD & Ketidakhadiran
+    <div class="section-heading">
+        <span id="rodAttendanceTitle">⚠️ ROD &amp; KETIDAKHADIRAN</span>
+        <button class="btn" onclick="openUpdate()">✏️ Kemaskini</button>
+    </div>
+
+    <div class="rod-attendance-grid">
+
+        <div class="card status-panel">
+            <div class="card-title">STATUS ROD</div>
+
+            <div class="rod-badges">
+                <span class="rod-badge minor">Minor: <span id="minorDisplay">9</span></span>
+                <span class="rod-badge rtax">RTAX: <span id="rtaxDisplay">2</span></span>
+                <span class="rod-badge van-rod">Van ROD: <span id="vanRodDisplay">2</span></span>
+            </div>
+
+            <p class="panel-note">Major ROD: Tiada</p>
         </div>
 
-        <div
-            class="card-detail"
-            style="margin-top:7px;line-height:1.55">
+        <div class="card status-panel">
+            <div class="card-title">KETIDAKHADIRAN</div>
 
-            Minor:
-            <span id="minorDisplay">9</span>
-
-            <br>
-
-            RTAX:
-            <span id="rtaxDisplay">2</span>
-
-            <br>
-
-            Van ROD:
-            <span id="vanRodDisplay">2</span>
-
-            <br>
-
-            ABS:
-            <span id="absDisplay">1</span>
-
-            <br>
-
-            MC:
-            <span id="mcDisplay">0</span>
-
-            <br>
-
-            EL:
-            <span id="elDisplay">0</span>
-
-            <br>
-
-            KHO:
-            <span id="khoDisplay">0</span>
-
+            <div class="attendance-stats">
+                <div><span class="attendance-value" id="absDisplay">1</span><span class="attendance-label">ABS</span></div>
+                <div><span class="attendance-value" id="mcDisplay">0</span><span class="attendance-label">MC</span></div>
+                <div><span class="attendance-value" id="elDisplay">0</span><span class="attendance-label">EL</span></div>
+                <div><span class="attendance-value" id="khoDisplay">0</span><span class="attendance-label">KHO</span></div>
+            </div>
         </div>
 
     </div>
 
-</div>
+</section>
 
 
 
 <div class="footer">
 
-    🔔 Pastikan semua data dikemaskini sebelum operasi bermula.
+    Disediakan oleh: <strong>Nur Izzahti binti Azeman (10022552)</strong>
 
 </div>
 
