@@ -1,19 +1,300 @@
 <!DOCTYPE html>
-<html>
+<html lang="ms">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Dashboard Operasi Harian BCV</title>
+
+    <style>
+
+        /* =========================
+           ASAS WEBSITE
+           ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef3fb;
+            color: #102a5c;
+        }
+
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        .top-bar {
+            background: #d9272e;
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #12357c, #1d4fb3);
+            color: white;
+            padding: 25px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .header p {
+            margin: 8px 0 0;
+            opacity: 0.9;
+        }
+
+
+        /* =========================
+           KANDUNGAN
+           ========================= */
+
+        .container {
+            padding: 25px;
+            max-width: 1600px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           KAD KPI
+           ========================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border-top: 4px solid #1d4fb3;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .card-title {
+            font-size: 13px;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .number {
+            font-size: 38px;
+            font-weight: bold;
+            margin-top: 8px;
+            color: #12357c;
+        }
+
+        .description {
+            margin-top: 5px;
+            color: #666;
+        }
+
+
+        /* =========================
+           KAD BESAR
+           ========================= */
+
+        .wide-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .wide-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border-top: 4px solid #d9272e;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .wide-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #12357c;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+           ========================= */
+
+        @media (max-width: 800px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .wide-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-    <h1>Dashboard Operasi Harian BCV</h1>
 
-    <p>Selamat datang ke dashboard operasi harian.</p>
+    <!-- BAR MERAH -->
+    <div class="top-bar">
+        DASHBOARD OPERASI HARIAN
+    </div>
 
-    <h2>Ringkasan Operasi</h2>
 
-    <p>AC / PP / BA: 53</p>
+    <!-- HEADER -->
+    <div class="header">
+
+        <h1>BCV</h1>
+
+        <p>
+            Depot BCV &nbsp; | &nbsp;
+            2 September 2026 &nbsp; | &nbsp;
+            Shift / Direct / Split: 55 / 0 / 0
+        </p>
+
+    </div>
+
+
+    <!-- KANDUNGAN -->
+    <div class="container">
+
+
+        <!-- RINGKASAN -->
+        <div class="section-title">
+            Ringkasan Operasi
+        </div>
+
+
+        <div class="cards">
+
+
+            <!-- AC PP BA -->
+            <div class="card">
+
+                <div class="card-title">
+                    AC / PP / BA
+                </div>
+
+                <div class="number">
+                    53
+                </div>
+
+                <div class="description">
+                    PP: 55 &nbsp; | &nbsp; BA: 74
+                </div>
+
+            </div>
+
+
+            <!-- KENDERAAN -->
+            <div class="card">
+
+                <div class="card-title">
+                    Kenderaan Operasi
+                </div>
+
+                <div class="number">
+                    53
+                </div>
+
+                <div class="description">
+                    🚌 Bas 40 &nbsp;&nbsp; 🚐 Van 13
+                </div>
+
+            </div>
+
+
+            <!-- LALUAN -->
+            <div class="card">
+
+                <div class="card-title">
+                    Jumlah Laluan
+                </div>
+
+                <div class="number">
+                    33
+                </div>
+
+                <div class="description">
+                    BUS 13 &nbsp;&nbsp; DRT 20
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- BAS / VAN -->
+
+        <div class="wide-cards">
+
+
+            <div class="wide-card">
+
+                <div class="card-title">
+                    Bas AC / PP / BA
+                </div>
+
+                <div class="wide-number">
+                    40 / 40 / 47
+                </div>
+
+            </div>
+
+
+            <div class="wide-card">
+
+                <div class="card-title">
+                    Van AC / PP / BA
+                </div>
+
+                <div class="wide-number">
+                    13 / 15 / 34
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
 
 </body>
 
