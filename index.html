@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="ms">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,7 +9,7 @@
 <style>
 
 /* =====================================================
-   ASAS
+   BASIC
 ===================================================== */
 
 * {
@@ -21,13 +19,19 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f7fb;
+    background: #f4f7fb;
     color: #15284b;
+    font-size: 14px;
+}
+
+button,
+input {
+    font-family: inherit;
 }
 
 
 /* =====================================================
-   LAYOUT UTAMA
+   LAYOUT
 ===================================================== */
 
 .app {
@@ -41,10 +45,10 @@ body {
 ===================================================== */
 
 .sidebar {
-    width: 245px;
+    width: 220px;
     background: #123b7a;
     color: white;
-    padding: 25px 16px;
+    padding: 20px 14px;
     position: fixed;
     left: 0;
     top: 0;
@@ -52,40 +56,40 @@ body {
 }
 
 .logo {
-    padding: 10px;
-    margin-bottom: 30px;
+    padding: 8px 10px;
+    margin-bottom: 24px;
 }
 
 .logo-icon {
-    font-size: 38px;
+    font-size: 32px;
 }
 
 .logo-title {
-    font-size: 23px;
+    font-size: 21px;
     font-weight: bold;
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
 .logo-subtitle {
-    font-size: 12px;
-    opacity: 0.8;
-    margin-top: 4px;
+    font-size: 11px;
+    opacity: .8;
+    margin-top: 3px;
 }
 
 .menu {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 5px;
 }
 
 .menu button {
     border: none;
     background: transparent;
     color: white;
-    padding: 14px 16px;
+    padding: 11px 13px;
     text-align: left;
-    border-radius: 10px;
-    font-size: 15px;
+    border-radius: 9px;
+    font-size: 13px;
     cursor: pointer;
 }
 
@@ -96,22 +100,22 @@ body {
 
 .operations-box {
     position: absolute;
-    left: 16px;
-    right: 16px;
-    bottom: 20px;
-    padding: 20px;
-    background: rgba(255,255,255,0.10);
-    border-radius: 15px;
+    left: 14px;
+    right: 14px;
+    bottom: 16px;
+    padding: 15px;
+    background: rgba(255,255,255,.10);
+    border-radius: 12px;
 }
 
 .operations-box strong {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
 .operations-box small {
-    line-height: 1.6;
-    opacity: 0.85;
+    line-height: 1.5;
+    opacity: .85;
 }
 
 
@@ -120,9 +124,9 @@ body {
 ===================================================== */
 
 .main {
-    margin-left: 245px;
-    width: calc(100% - 245px);
-    padding: 28px;
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    padding: 22px;
 }
 
 
@@ -134,36 +138,39 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
 }
 
 .header h1 {
     margin: 0;
-    font-size: 30px;
+    font-size: 26px;
 }
 
 .header p {
-    margin: 6px 0 0;
+    margin: 5px 0 0;
     color: #667085;
+    font-size: 13px;
 }
 
 .header-right {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 .date-box,
 .status-box,
 .user-box {
     background: white;
-    border: 1px solid #e2e7f0;
-    border-radius: 12px;
-    padding: 13px 18px;
+    border: 1px solid #e1e6ef;
+    border-radius: 10px;
+    padding: 10px 13px;
+    font-size: 13px;
 }
 
 .status-box {
-    color: #0b7a53;
+    color: #087c5a;
     font-weight: bold;
 }
 
@@ -180,10 +187,11 @@ body {
     border: 1px solid #2b63d9;
     background: white;
     color: #1d56c7;
-    padding: 11px 17px;
-    border-radius: 9px;
+    padding: 9px 13px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 12px;
 }
 
 .btn:hover {
@@ -202,80 +210,75 @@ body {
 
 
 /* =====================================================
-   KPI
+   CARDS
 ===================================================== */
 
 .kpi-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-bottom: 15px;
+    gap: 12px;
+    margin-bottom: 12px;
 }
 
 .card {
     background: white;
-    border: 1px solid #e5e9f1;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+    border: 1px solid #e3e8f0;
+    border-radius: 13px;
+    padding: 16px;
+    box-shadow: 0 2px 9px rgba(0,0,0,.035);
 }
 
 .card-title {
-    font-size: 13px;
+    font-size: 11px;
     font-weight: bold;
     color: #667085;
     text-transform: uppercase;
 }
 
 .card-number {
-    font-size: 34px;
+    font-size: 30px;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 7px 0;
     color: #123b7a;
 }
 
 .card-detail {
-    font-size: 14px;
+    font-size: 12px;
     color: #667085;
 }
-
-
-/* =====================================================
-   DUA KAD BESAR
-===================================================== */
 
 .two-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 15px;
+    gap: 12px;
+    margin-bottom: 12px;
 }
 
 .big-card {
-    min-height: 130px;
+    min-height: 100px;
 }
 
 .big-number {
-    font-size: 30px;
+    font-size: 26px;
     font-weight: bold;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
 
 /* =====================================================
-   ROUTE SECTION
+   ROUTE TABLE
 ===================================================== */
 
 .route-card {
     background: white;
-    border: 1px solid #e5e9f1;
-    border-radius: 15px;
+    border: 1px solid #e3e8f0;
+    border-radius: 13px;
     overflow: hidden;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 9px rgba(0,0,0,.035);
 }
 
 .route-header {
-    padding: 18px 20px;
+    padding: 15px 17px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -283,26 +286,22 @@ body {
 }
 
 .route-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 
 .route-tools {
     display: flex;
-    gap: 8px;
+    gap: 7px;
 }
 
 .search {
-    padding: 10px 13px;
+    padding: 8px 11px;
     border: 1px solid #d9dfeb;
-    border-radius: 9px;
-    width: 260px;
+    border-radius: 8px;
+    width: 220px;
+    font-size: 12px;
 }
-
-
-/* =====================================================
-   TABLE
-===================================================== */
 
 table {
     width: 100%;
@@ -311,16 +310,16 @@ table {
 
 th {
     background: #f8faff;
-    padding: 13px;
+    padding: 10px;
     text-align: left;
-    font-size: 12px;
+    font-size: 10px;
     color: #667085;
 }
 
 td {
-    padding: 13px;
+    padding: 10px;
     border-top: 1px solid #edf0f5;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .route-name {
@@ -330,9 +329,9 @@ td {
 
 .badge {
     display: inline-block;
-    padding: 5px 9px;
-    border-radius: 7px;
-    font-size: 12px;
+    padding: 4px 7px;
+    border-radius: 6px;
+    font-size: 10px;
     font-weight: bold;
 }
 
@@ -357,11 +356,11 @@ td {
 }
 
 .edit-route {
-    padding: 7px 10px;
+    padding: 5px 8px;
     border: 1px solid #b9cdf5;
     background: white;
     color: #1758c7;
-    border-radius: 7px;
+    border-radius: 6px;
     cursor: pointer;
 }
 
@@ -373,97 +372,133 @@ td {
 .bottom-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-top: 15px;
+    gap: 12px;
+    margin-top: 12px;
 }
 
 .bottom-number {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 8px;
 }
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
 
 .footer {
-    margin-top: 15px;
-    padding: 13px 18px;
+    margin-top: 12px;
+    padding: 11px 15px;
     background: #eaf2ff;
     border: 1px solid #d3e1fb;
-    border-radius: 10px;
+    border-radius: 9px;
     color: #35527e;
-    font-size: 13px;
+    font-size: 11px;
 }
 
 
 /* =====================================================
-   MODAL KEMASKINI
+   UPDATE MODAL
 ===================================================== */
 
 .modal {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,.48);
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
+    padding: 20px;
 }
 
 .modal-box {
-    width: 500px;
-    max-width: 95%;
+    width: 560px;
+    max-width: 95vw;
     max-height: 90vh;
-    overflow-y: auto;
     background: white;
     border-radius: 15px;
-    padding: 25px;
-}
-
-.update-section {
-    border-top: 1px solid #e5e9f1;
-    padding-top: 15px;
-    margin-top: 18px;
-}
-
-.update-section-title {
-    font-size: 14px;
-    font-weight: bold;
-    color: #123b7a;
-    margin-bottom: 12px;
-    text-transform: uppercase;
+    padding: 22px;
+    overflow-y: auto;
+    box-shadow: 0 15px 40px rgba(0,0,0,.2);
 }
 
 .modal-box h2 {
-    margin-top: 0;
+    margin: 0;
+    font-size: 21px;
+}
+
+.modal-description {
+    color: #667085;
+    margin: 5px 0 17px;
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   UPDATE SECTION
+===================================================== */
+
+.update-section {
+    border: 1px solid #e2e7ef;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.update-section-title {
+    background: #f3f6fb;
+    padding: 9px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #123b7a;
+}
+
+.update-section-body {
+    padding: 12px;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 6px;
-    font-size: 13px;
+    margin-bottom: 5px;
+    font-size: 11px;
     font-weight: bold;
+    color: #344054;
 }
 
 .form-group input {
     width: 100%;
-    padding: 11px;
+    padding: 9px 10px;
     border: 1px solid #d8deea;
-    border-radius: 8px;
+    border-radius: 7px;
+    font-size: 12px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #2864d7;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
 .modal-actions {
     display: flex;
     justify-content: flex-end;
     gap: 8px;
-    margin-top: 20px;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid #edf0f5;
+    position: sticky;
+    bottom: 0;
+    background: white;
 }
 
 
@@ -486,8 +521,8 @@ td {
 @media (max-width: 800px) {
 
     .sidebar {
-        width: 70px;
-        padding: 15px 8px;
+        width: 65px;
+        padding: 12px 7px;
     }
 
     .logo-title,
@@ -502,9 +537,9 @@ td {
     }
 
     .main {
-        margin-left: 70px;
-        width: calc(100% - 70px);
-        padding: 15px;
+        margin-left: 65px;
+        width: calc(100% - 65px);
+        padding: 12px;
     }
 
     .header {
@@ -512,8 +547,7 @@ td {
     }
 
     .header-right {
-        margin-top: 15px;
-        flex-wrap: wrap;
+        margin-top: 12px;
     }
 
     .kpi-grid,
@@ -527,7 +561,7 @@ td {
     }
 
     .route-tools {
-        margin-top: 10px;
+        margin-top: 9px;
     }
 
     .search {
@@ -538,15 +572,17 @@ td {
         overflow-x: auto;
     }
 
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 </style>
-
 </head>
 
 
 <body>
-
 
 <div class="app">
 
@@ -611,7 +647,9 @@ td {
 
     <div class="operations-box">
 
-        <strong>🚍 Batu Caves Operations</strong>
+        <strong>
+            🚍 Batu Caves Operations
+        </strong>
 
         <small>
             Keep Moving,<br>
@@ -625,7 +663,7 @@ td {
 
 
 <!-- =====================================================
-     MAIN
+     MAIN DASHBOARD
 ===================================================== -->
 
 <main class="main">
@@ -637,7 +675,9 @@ td {
 
     <div>
 
-        <h1>Dashboard Operasi Harian</h1>
+        <h1>
+            Dashboard Operasi Harian
+        </h1>
 
         <p>
             Depot Batu Caves
@@ -660,11 +700,13 @@ td {
             👤 BCV Team
         </div>
 
-        <button class="btn" onclick="openUpdate()">
+        <button class="btn"
+                onclick="openUpdate()">
             🔄 Kemaskini Data
         </button>
 
-        <button class="btn btn-primary" onclick="openUpdate()">
+        <button class="btn btn-primary"
+                onclick="openUpdate()">
             ＋ Update Manual
         </button>
 
@@ -674,9 +716,7 @@ td {
 
 
 
-<!-- =====================================================
-     KPI
-===================================================== -->
+<!-- KPI -->
 
 <div class="kpi-grid">
 
@@ -687,14 +727,17 @@ td {
             AC / PP / BA
         </div>
 
-        <div class="card-number" id="ac">
+        <div class="card-number"
+             id="ac">
             53
         </div>
 
         <div class="card-detail">
-            PP: <span id="pp">55</span>
+            PP:
+            <span id="pp">55</span>
             &nbsp; | &nbsp;
-            BA: <span id="ba">74</span>
+            BA:
+            <span id="ba">74</span>
         </div>
 
     </div>
@@ -706,14 +749,15 @@ td {
             Kenderaan Operasi
         </div>
 
-        <div class="card-number" id="vehicles">
+        <div class="card-number"
+             id="vehicles">
             53
         </div>
 
         <div class="card-detail">
-            🚌 Bas 40
+            🚌 Bas <span id="busVehicle">40</span>
             &nbsp; | &nbsp;
-            🚐 Van 13
+            🚐 Van <span id="vanVehicle">13</span>
         </div>
 
     </div>
@@ -730,9 +774,7 @@ td {
         </div>
 
         <div class="card-detail">
-            BUS 13
-            &nbsp; | &nbsp;
-            DRT 20
+            BUS 13 &nbsp; | &nbsp; DRT 20
         </div>
 
     </div>
@@ -744,26 +786,22 @@ td {
             Agihan Shift
         </div>
 
-        <div class="card-number">
+        <div class="card-number"
+             id="shiftDisplay">
             55 / 0 / 0
         </div>
 
         <div class="card-detail">
-            Shift &nbsp; | &nbsp;
-            Direct &nbsp; | &nbsp;
-            Split
+            Shift &nbsp; | &nbsp; Direct &nbsp; | &nbsp; Split
         </div>
 
     </div>
-
 
 </div>
 
 
 
-<!-- =====================================================
-     BAS / VAN
-===================================================== -->
+<!-- BUS / VAN -->
 
 <div class="two-column">
 
@@ -771,10 +809,11 @@ td {
     <div class="card big-card">
 
         <div class="card-title">
-            Bas AC / PP / BA
+            BAS AC / PP / BA
         </div>
 
-        <div class="big-number">
+        <div class="big-number"
+             id="busDisplay">
             40 / 40 / 47
         </div>
 
@@ -784,23 +823,21 @@ td {
     <div class="card big-card">
 
         <div class="card-title">
-            Van AC / PP / BA
+            VAN AC / PP / BA
         </div>
 
-        <div class="big-number">
+        <div class="big-number"
+             id="vanDisplay">
             13 / 15 / 34
         </div>
 
     </div>
 
-
 </div>
 
 
 
-<!-- =====================================================
-     LALUAN
-===================================================== -->
+<!-- ROUTES -->
 
 <div class="route-card">
 
@@ -809,6 +846,7 @@ td {
         <div class="route-title">
             🛣️ LALUAN HARI INI
         </div>
+
 
         <div class="route-tools">
 
@@ -820,7 +858,8 @@ td {
                 onkeyup="searchRoute()"
             >
 
-            <button class="btn" onclick="openUpdate()">
+            <button class="btn"
+                    onclick="openUpdate()">
                 ✏️ Kemaskini
             </button>
 
@@ -887,8 +926,7 @@ td {
                 <td>
                     <button
                         class="edit-route"
-                        onclick="editRoute('T780')"
-                    >
+                        onclick="editRoute('T780')">
                         ✏️
                     </button>
                 </td>
@@ -931,8 +969,7 @@ td {
                 <td>
                     <button
                         class="edit-route"
-                        onclick="editRoute('T781')"
-                    >
+                        onclick="editRoute('T781')">
                         ✏️
                     </button>
                 </td>
@@ -975,8 +1012,7 @@ td {
                 <td>
                     <button
                         class="edit-route"
-                        onclick="editRoute('T775B')"
-                    >
+                        onclick="editRoute('T775B')">
                         ✏️
                     </button>
                 </td>
@@ -1019,8 +1055,7 @@ td {
                 <td>
                     <button
                         class="edit-route"
-                        onclick="editRoute('T779')"
-                    >
+                        onclick="editRoute('T779')">
                         ✏️
                     </button>
                 </td>
@@ -1036,9 +1071,7 @@ td {
 
 
 
-<!-- =====================================================
-     BOTTOM INFORMATION
-===================================================== -->
+<!-- BOTTOM -->
 
 <div class="bottom-grid">
 
@@ -1049,15 +1082,14 @@ td {
             Hasil (RM)
         </div>
 
-        <div class="bottom-number">
+        <div class="bottom-number"
+             id="revenueDisplay">
             TBA
         </div>
 
-        <button
-            class="btn"
-            style="margin-top:10px;"
-            onclick="openUpdate()"
-        >
+        <button class="btn"
+                style="margin-top:8px;"
+                onclick="openUpdate()">
             ✏️ Kemaskini
         </button>
 
@@ -1070,15 +1102,14 @@ td {
             Penumpang
         </div>
 
-        <div class="bottom-number">
+        <div class="bottom-number"
+             id="passengerDisplay">
             TBA
         </div>
 
-        <button
-            class="btn"
-            style="margin-top:10px;"
-            onclick="openUpdate()"
-        >
+        <button class="btn"
+                style="margin-top:8px;"
+                onclick="openUpdate()">
             ✏️ Kemaskini
         </button>
 
@@ -1091,12 +1122,15 @@ td {
             Spare BC / VC
         </div>
 
-        <div class="bottom-number">
+        <div class="bottom-number"
+             id="spareDisplay">
             10 / 12
         </div>
 
         <div class="card-detail">
-            BC: 10 &nbsp; | &nbsp; VC: 12
+            BC: <span id="spareBCDisplay">10</span>
+            &nbsp; | &nbsp;
+            VC: <span id="spareVCDisplay">12</span>
         </div>
 
     </div>
@@ -1108,20 +1142,39 @@ td {
             ROD & Ketidakhadiran
         </div>
 
-        <div class="card-detail" style="margin-top:10px;">
+        <div class="card-detail"
+             style="margin-top:8px; line-height:1.6;">
 
-            Minor: 9<br>
-            RTAX: 2<br>
-            Van ROD: 2<br>
-            ABS: 1<br>
-            MC: 0<br>
-            EL: 0<br>
-            KHO: 0
+            Minor:
+            <span id="minorDisplay">9</span>
+            <br>
+
+            RTAX:
+            <span id="rtaxDisplay">2</span>
+            <br>
+
+            Van ROD:
+            <span id="vanRodDisplay">2</span>
+            <br>
+
+            ABS:
+            <span id="absDisplay">1</span>
+            <br>
+
+            MC:
+            <span id="mcDisplay">0</span>
+            <br>
+
+            EL:
+            <span id="elDisplay">0</span>
+            <br>
+
+            KHO:
+            <span id="khoDisplay">0</span>
 
         </div>
 
     </div>
-
 
 </div>
 
@@ -1141,68 +1194,618 @@ td {
 
 
 <!-- =====================================================
-     MODAL UPDATE SEMUA DATA
+     UPDATE MODAL
 ===================================================== -->
 
+<div class="modal"
+     id="updateModal">
+
+
+<div class="modal-box">
+
+
+    <h2>
+        ✏️ Kemaskini Data Operasi
+    </h2>
+
+    <div class="modal-description">
+        Kemaskini semua data operasi Batu Caves di sini.
+    </div>
+
+
+
+    <!-- OPERASI -->
+
+    <div class="update-section">
+
+        <div class="update-section-title">
+            ⚙️ OPERASI
+        </div>
+
+        <div class="update-section-body">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>AC (ACTUAL)</label>
+                    <input type="number"
+                           id="inputAC"
+                           value="53">
+                </div>
+
+                <div class="form-group">
+                    <label>PP (PREPLAN)</label>
+                    <input type="number"
+                           id="inputPP"
+                           value="55">
+                </div>
+
+                <div class="form-group">
+                    <label>BA (BUS AVAILABLE)</label>
+                    <input type="number"
+                           id="inputBA"
+                           value="74">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- BAS -->
+
+    <div class="update-section">
+
+        <div class="update-section-title">
+            🚌 BAS
+        </div>
+
+        <div class="update-section-body">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>BAS AC</label>
+                    <input type="number"
+                           id="inputBasAC"
+                           value="40">
+                </div>
+
+                <div class="form-group">
+                    <label>BAS PP</label>
+                    <input type="number"
+                           id="inputBasPP"
+                           value="40">
+                </div>
+
+                <div class="form-group">
+                    <label>BAS BA</label>
+                    <input type="number"
+                           id="inputBasBA"
+                           value="47">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- VAN -->
+
+    <div class="update-section">
+
+        <div class="update-section-title">
+            🚐 VAN
+        </div>
+
+        <div class="update-section-body">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>VAN AC</label>
+                    <input type="number"
+                           id="inputVanAC"
+                           value="13">
+                </div>
+
+                <div class="form-group">
+                    <label>VAN PP</label>
+                    <input type="number"
+                           id="inputVanPP"
+                           value="15">
+                </div>
+
+                <div class="form-group">
+                    <label>VAN BA</label>
+                    <input type="number"
+                           id="inputVanBA"
+                           value="34">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- AGIHAN -->
+
+    <div class="update-section">
+
+        <div class="update-section-title">
+            👥 AGIHAN SHIFT
+        </div>
+
+        <div class="update-section-body">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>SHIFT</label>
+                    <input type="number"
+                           id="inputShift"
+                           value="55">
+                </div>
+
+                <div class="form-group">
+                    <label>DIRECT</label>
+                    <input type="number"
+                           id="inputDirect"
+                           value="0">
+                </div>
+
+                <div class="form-group">
+                    <label>SPLIT</label>
+                    <input type="number"
+                           id="inputSplit"
+                           value="0">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SPARE -->
+
+    <div class="update-section">
+
+        <div class="update-section-title">
+            🔧 SPARE
+        </div>
+
+        <div class="update-section-body">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>SPARE BC</label>
+                    <input type="number"
+                           id="inputSpareBC"
+                           value="10">
+                </div>
+
+                <div class="form-group">
+                    <label>SPARE VC</label>
+                    <input type="number"
+                           id="inputSpareVC"
+                           value="12">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- HASIL -->
+
+    <div class="update-section">
+
+        <div class="update-section-title">
+            💰 HASIL & PENUMPANG
+        </div>
+
+        <div class="update-section-body">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>HASIL (RM)</label>
+                    <input type="number"
+                           step="0.01"
+                           id="inputRevenue"
+                           placeholder="Masukkan hasil">
+                </div>
+
+                <div class="form-group">
+                    <label>PENUMPANG</label>
+                    <input type="number"
+                           id="inputPassenger"
+                           placeholder="Masukkan jumlah">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ROD -->
+
+    <div class="update-section">
+
+        <div class="update-section-title">
+            ⚠️ ROD
+        </div>
+
+        <div class="update-section-body">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>MINOR</label>
+                    <input type="number"
+                           id="inputMinor"
+                           value="9">
+                </div>
+
+                <div class="form-group">
+                    <label>RTAX</label>
+                    <input type="number"
+                           id="inputRTAX"
+                           value="2">
+                </div>
+
+                <div class="form-group">
+                    <label>VAN ROD</label>
+                    <input type="number"
+                           id="inputVanROD"
+                           value="2">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- KEHADIRAN -->
+
+    <div class="update-section">
+
+        <div class="update-section-title">
+            🕒 KETIDAKHADIRAN
+        </div>
+
+        <div class="update-section-body">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>ABS</label>
+                    <input type="number"
+                           id="inputABS"
+                           value="1">
+                </div>
+
+                <div class="form-group">
+                    <label>MC</label>
+                    <input type="number"
+                           id="inputMC"
+                           value="0">
+                </div>
+
+                <div class="form-group">
+                    <label>EL</label>
+                    <input type="number"
+                           id="inputEL"
+                           value="0">
+                </div>
+
+                <div class="form-group">
+                    <label>KHO</label>
+                    <input type="number"
+                           id="inputKHO"
+                           value="0">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- BUTTON -->
+
+    <div class="modal-actions">
+
+        <button class="btn"
+                onclick="closeUpdate()">
+            Batal
+        </button>
+
+        <button class="btn btn-primary"
+                onclick="saveUpdate()">
+            💾 Simpan
+        </button>
+
+    </div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
+
 /* =====================================================
-   UPDATE DATA OPERASI
+   OPEN / CLOSE MODAL
 ===================================================== */
 
 function openUpdate() {
-    const modal = document.getElementById("updateModal");
 
-    if (modal) {
-        modal.style.display = "flex";
-    }
+    document.getElementById("updateModal").style.display = "flex";
+
 }
 
 
 function closeUpdate() {
-    const modal = document.getElementById("updateModal");
 
-    if (modal) {
-        modal.style.display = "none";
-    }
+    document.getElementById("updateModal").style.display = "none";
+
 }
 
 
+
 /* =====================================================
-   SIMPAN SEMUA DATA
+   SAVE UPDATE
 ===================================================== */
 
 function saveUpdate() {
 
-    // Senarai semua field dalam popup
+
+    /* OPERASI */
+
+    const ac =
+        document.getElementById("inputAC").value;
+
+    const pp =
+        document.getElementById("inputPP").value;
+
+    const ba =
+        document.getElementById("inputBA").value;
+
+
+    document.getElementById("ac").innerText = ac;
+
+    document.getElementById("pp").innerText = pp;
+
+    document.getElementById("ba").innerText = ba;
+
+
+
+    /* BAS */
+
+    const busAC =
+        document.getElementById("inputBasAC").value;
+
+    const busPP =
+        document.getElementById("inputBasPP").value;
+
+    const busBA =
+        document.getElementById("inputBasBA").value;
+
+
+    document.getElementById("busDisplay").innerText =
+        busAC + " / " + busPP + " / " + busBA;
+
+    document.getElementById("busVehicle").innerText =
+        busAC;
+
+
+
+    /* VAN */
+
+    const vanAC =
+        document.getElementById("inputVanAC").value;
+
+    const vanPP =
+        document.getElementById("inputVanPP").value;
+
+    const vanBA =
+        document.getElementById("inputVanBA").value;
+
+
+    document.getElementById("vanDisplay").innerText =
+        vanAC + " / " + vanPP + " / " + vanBA;
+
+    document.getElementById("vanVehicle").innerText =
+        vanAC;
+
+
+
+    /* JUMLAH KENDERAAN */
+
+    const totalVehicles =
+        Number(busAC || 0) +
+        Number(vanAC || 0);
+
+    document.getElementById("vehicles").innerText =
+        totalVehicles;
+
+
+
+    /* SHIFT */
+
+    const shift =
+        document.getElementById("inputShift").value;
+
+    const direct =
+        document.getElementById("inputDirect").value;
+
+    const split =
+        document.getElementById("inputSplit").value;
+
+
+    document.getElementById("shiftDisplay").innerText =
+        shift + " / " + direct + " / " + split;
+
+
+
+    /* SPARE */
+
+    const spareBC =
+        document.getElementById("inputSpareBC").value;
+
+    const spareVC =
+        document.getElementById("inputSpareVC").value;
+
+
+    document.getElementById("spareDisplay").innerText =
+        spareBC + " / " + spareVC;
+
+    document.getElementById("spareBCDisplay").innerText =
+        spareBC;
+
+    document.getElementById("spareVCDisplay").innerText =
+        spareVC;
+
+
+
+    /* HASIL */
+
+    const revenue =
+        document.getElementById("inputRevenue").value;
+
+
+    if (revenue !== "") {
+
+        document.getElementById("revenueDisplay").innerText =
+            Number(revenue).toLocaleString("en-MY", {
+                minimumFractionDigits: 2
+            });
+
+    }
+
+
+
+    /* PENUMPANG */
+
+    const passenger =
+        document.getElementById("inputPassenger").value;
+
+
+    if (passenger !== "") {
+
+        document.getElementById("passengerDisplay").innerText =
+            Number(passenger).toLocaleString("en-MY");
+
+    }
+
+
+
+    /* ROD */
+
+    const minor =
+        document.getElementById("inputMinor").value;
+
+    const rtax =
+        document.getElementById("inputRTAX").value;
+
+    const vanRod =
+        document.getElementById("inputVanROD").value;
+
+
+    document.getElementById("minorDisplay").innerText =
+        minor;
+
+    document.getElementById("rtaxDisplay").innerText =
+        rtax;
+
+    document.getElementById("vanRodDisplay").innerText =
+        vanRod;
+
+
+
+    /* KEHADIRAN */
+
+    const abs =
+        document.getElementById("inputABS").value;
+
+    const mc =
+        document.getElementById("inputMC").value;
+
+    const el =
+        document.getElementById("inputEL").value;
+
+    const kho =
+        document.getElementById("inputKHO").value;
+
+
+    document.getElementById("absDisplay").innerText =
+        abs;
+
+    document.getElementById("mcDisplay").innerText =
+        mc;
+
+    document.getElementById("elDisplay").innerText =
+        el;
+
+    document.getElementById("khoDisplay").innerText =
+        kho;
+
+
+
+    /* SIMPAN DATA DALAM BROWSER */
+
     const fields = [
         "inputAC",
         "inputPP",
         "inputBA",
-
         "inputBasAC",
         "inputBasPP",
         "inputBasBA",
-
         "inputVanAC",
         "inputVanPP",
         "inputVanBA",
-
         "inputShift",
         "inputDirect",
         "inputSplit",
-
         "inputSpareBC",
         "inputSpareVC",
-
         "inputRevenue",
         "inputPassenger",
-
         "inputMinor",
         "inputRTAX",
         "inputVanROD",
-
         "inputABS",
         "inputMC",
         "inputEL",
@@ -1210,88 +1813,61 @@ function saveUpdate() {
     ];
 
 
-    // Simpan semua input
     fields.forEach(function(id) {
 
-        const input = document.getElementById(id);
+        const input =
+            document.getElementById(id);
 
         if (input) {
+
             localStorage.setItem(
                 id,
                 input.value
             );
+
         }
 
     });
 
 
-    // =================================================
-    // UPDATE OPERASI
-    // =================================================
-
-    const ac = document.getElementById("inputAC");
-    const pp = document.getElementById("inputPP");
-    const ba = document.getElementById("inputBA");
-
-
-    if (ac && document.getElementById("ac")) {
-        document.getElementById("ac").innerText = ac.value;
-    }
-
-
-    if (pp && document.getElementById("pp")) {
-        document.getElementById("pp").innerText = pp.value;
-    }
-
-
-    if (ba && document.getElementById("ba")) {
-        document.getElementById("ba").innerText = ba.value;
-    }
-
-
-    // Tutup popup
     closeUpdate();
 
 
-    // Mesej
-    alert("Semua data operasi berjaya dikemaskini!");
+    alert(
+        "Semua data operasi berjaya dikemaskini!"
+    );
 
 }
 
 
+
 /* =====================================================
-   LOAD DATA YANG TELAH DISIMPAN
+   LOAD SAVED DATA
 ===================================================== */
 
 function loadSavedData() {
+
 
     const fields = [
         "inputAC",
         "inputPP",
         "inputBA",
-
         "inputBasAC",
         "inputBasPP",
         "inputBasBA",
-
         "inputVanAC",
         "inputVanPP",
         "inputVanBA",
-
         "inputShift",
         "inputDirect",
         "inputSplit",
-
         "inputSpareBC",
         "inputSpareVC",
-
         "inputRevenue",
         "inputPassenger",
-
         "inputMinor",
         "inputRTAX",
         "inputVanROD",
-
         "inputABS",
         "inputMC",
         "inputEL",
@@ -1301,37 +1877,168 @@ function loadSavedData() {
 
     fields.forEach(function(id) {
 
-        const input = document.getElementById(id);
-        const saved = localStorage.getItem(id);
+        const saved =
+            localStorage.getItem(id);
 
-        if (input && saved !== null) {
+        const input =
+            document.getElementById(id);
+
+        if (
+            saved !== null &&
+            input
+        ) {
+
             input.value = saved;
+
         }
 
     });
 
 
-    // Update AC / PP / BA pada dashboard
-    const ac = localStorage.getItem("inputAC");
-    const pp = localStorage.getItem("inputPP");
-    const ba = localStorage.getItem("inputBA");
+    /* Update dashboard */
+
+    const ac =
+        document.getElementById("inputAC").value;
+
+    const pp =
+        document.getElementById("inputPP").value;
+
+    const ba =
+        document.getElementById("inputBA").value;
 
 
-    if (ac && document.getElementById("ac")) {
-        document.getElementById("ac").innerText = ac;
+    document.getElementById("ac").innerText = ac;
+
+    document.getElementById("pp").innerText = pp;
+
+    document.getElementById("ba").innerText = ba;
+
+
+
+    const busAC =
+        document.getElementById("inputBasAC").value;
+
+    const busPP =
+        document.getElementById("inputBasPP").value;
+
+    const busBA =
+        document.getElementById("inputBasBA").value;
+
+
+    document.getElementById("busDisplay").innerText =
+        busAC + " / " + busPP + " / " + busBA;
+
+    document.getElementById("busVehicle").innerText =
+        busAC;
+
+
+
+    const vanAC =
+        document.getElementById("inputVanAC").value;
+
+    const vanPP =
+        document.getElementById("inputVanPP").value;
+
+    const vanBA =
+        document.getElementById("inputVanBA").value;
+
+
+    document.getElementById("vanDisplay").innerText =
+        vanAC + " / " + vanPP + " / " + vanBA;
+
+    document.getElementById("vanVehicle").innerText =
+        vanAC;
+
+
+    document.getElementById("vehicles").innerText =
+        Number(busAC || 0) +
+        Number(vanAC || 0);
+
+
+
+    const shift =
+        document.getElementById("inputShift").value;
+
+    const direct =
+        document.getElementById("inputDirect").value;
+
+    const split =
+        document.getElementById("inputSplit").value;
+
+
+    document.getElementById("shiftDisplay").innerText =
+        shift + " / " + direct + " / " + split;
+
+
+
+    const spareBC =
+        document.getElementById("inputSpareBC").value;
+
+    const spareVC =
+        document.getElementById("inputSpareVC").value;
+
+
+    document.getElementById("spareDisplay").innerText =
+        spareBC + " / " + spareVC;
+
+    document.getElementById("spareBCDisplay").innerText =
+        spareBC;
+
+    document.getElementById("spareVCDisplay").innerText =
+        spareVC;
+
+
+
+    const revenue =
+        document.getElementById("inputRevenue").value;
+
+
+    if (revenue !== "") {
+
+        document.getElementById("revenueDisplay").innerText =
+            Number(revenue).toLocaleString("en-MY", {
+                minimumFractionDigits: 2
+            });
+
     }
 
 
-    if (pp && document.getElementById("pp")) {
-        document.getElementById("pp").innerText = pp;
+    const passenger =
+        document.getElementById("inputPassenger").value;
+
+
+    if (passenger !== "") {
+
+        document.getElementById("passengerDisplay").innerText =
+            Number(passenger).toLocaleString("en-MY");
+
     }
 
 
-    if (ba && document.getElementById("ba")) {
-        document.getElementById("ba").innerText = ba;
-    }
+
+    document.getElementById("minorDisplay").innerText =
+        document.getElementById("inputMinor").value;
+
+    document.getElementById("rtaxDisplay").innerText =
+        document.getElementById("inputRTAX").value;
+
+    document.getElementById("vanRodDisplay").innerText =
+        document.getElementById("inputVanROD").value;
+
+    document.getElementById("absDisplay").innerText =
+        document.getElementById("inputABS").value;
+
+    document.getElementById("mcDisplay").innerText =
+        document.getElementById("inputMC").value;
+
+    document.getElementById("elDisplay").innerText =
+        document.getElementById("inputEL").value;
+
+    document.getElementById("khoDisplay").innerText =
+        document.getElementById("inputKHO").value;
 
 }
+
 
 
 /* =====================================================
@@ -1340,16 +2047,18 @@ function loadSavedData() {
 
 function searchRoute() {
 
-    const searchBox = document.getElementById("searchRoute");
 
-    if (!searchBox) return;
-
-
-    const input = searchBox.value.toLowerCase();
+    const input =
+        document
+        .getElementById("searchRoute")
+        .value
+        .toLowerCase();
 
 
     const rows =
-        document.querySelectorAll("#routeTable tr");
+        document.querySelectorAll(
+            "#routeTable tr"
+        );
 
 
     rows.forEach(function(row) {
@@ -1358,19 +2067,15 @@ function searchRoute() {
             row.innerText.toLowerCase();
 
 
-        if (text.includes(input)) {
-
-            row.style.display = "";
-
-        } else {
-
-            row.style.display = "none";
-
-        }
+        row.style.display =
+            text.includes(input)
+            ? ""
+            : "none";
 
     });
 
 }
+
 
 
 /* =====================================================
@@ -1388,36 +2093,44 @@ function editRoute(route) {
 }
 
 
+
 /* =====================================================
-   TUTUP POPUP BILA KLIK LUAR
+   CLICK OUTSIDE MODAL
 ===================================================== */
 
-window.addEventListener("click", function(event) {
+window.addEventListener(
+    "click",
+    function(event) {
 
-    const modal =
-        document.getElementById("updateModal");
+        const modal =
+            document.getElementById("updateModal");
 
 
-    if (event.target === modal) {
-        closeUpdate();
+        if (event.target === modal) {
+
+            closeUpdate();
+
+        }
+
     }
+);
 
-});
 
 
 /* =====================================================
-   LOAD DATA BILA WEBSITE DIBUKA
+   LOAD
 ===================================================== */
 
-window.addEventListener("DOMContentLoaded", function() {
+window.addEventListener(
+    "DOMContentLoaded",
+    function() {
 
-    loadSavedData();
+        loadSavedData();
 
-});
+    }
+);
 
 </script>
 
-
 </body>
-
 </html>
