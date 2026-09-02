@@ -414,10 +414,27 @@ td {
 }
 
 .modal-box {
-    width: 450px;
+    width: 500px;
+    max-width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
     background: white;
     border-radius: 15px;
     padding: 25px;
+}
+
+.update-section {
+    border-top: 1px solid #e5e9f1;
+    padding-top: 15px;
+    margin-top: 18px;
+}
+
+.update-section-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #123b7a;
+    margin-bottom: 12px;
+    text-transform: uppercase;
 }
 
 .modal-box h2 {
@@ -1124,76 +1141,236 @@ td {
 
 
 <!-- =====================================================
-     MODAL UPDATE
+     MODAL UPDATE SEMUA DATA
 ===================================================== -->
 
 <div class="modal" id="updateModal">
 
     <div class="modal-box">
 
-        <h2>
-            Kemaskini Data Operasi
-        </h2>
+        <h2>✏️ Kemaskini Data Operasi</h2>
 
-        <div class="form-group">
-
-            <label>
-                AC
-            </label>
-
-            <input
-                type="number"
-                id="inputAC"
-                value="53"
-            >
-
-        </div>
+        <p style="color:#667085; margin-top:-5px;">
+            Kemaskini semua data operasi Batu Caves di sini.
+        </p>
 
 
-        <div class="form-group">
+        <!-- OPERASI -->
 
-            <label>
-                PP
-            </label>
+        <div class="update-section">
+            <div class="update-section-title">
+                OPERASI
+            </div>
 
-            <input
-                type="number"
-                id="inputPP"
-                value="55"
-            >
+            <div class="form-group">
+                <label>AC (ACTUAL)</label>
+                <input type="number" id="inputAC" value="53">
+            </div>
+
+            <div class="form-group">
+                <label>PP (PREPLAN)</label>
+                <input type="number" id="inputPP" value="55">
+            </div>
+
+            <div class="form-group">
+                <label>BA (BUS AVAILABLE)</label>
+                <input type="number" id="inputBA" value="74">
+            </div>
 
         </div>
 
 
-        <div class="form-group">
+        <!-- BAS -->
 
-            <label>
-                BA
-            </label>
+        <div class="update-section">
 
-            <input
-                type="number"
-                id="inputBA"
-                value="74"
-            >
+            <div class="update-section-title">
+                🚌 BAS
+            </div>
+
+            <div class="form-group">
+                <label>BAS AC</label>
+                <input type="number" id="inputBasAC" value="40">
+            </div>
+
+            <div class="form-group">
+                <label>BAS PP</label>
+                <input type="number" id="inputBasPP" value="40">
+            </div>
+
+            <div class="form-group">
+                <label>BAS BA</label>
+                <input type="number" id="inputBasBA" value="47">
+            </div>
 
         </div>
 
+
+        <!-- VAN -->
+
+        <div class="update-section">
+
+            <div class="update-section-title">
+                🚐 VAN
+            </div>
+
+            <div class="form-group">
+                <label>VAN AC</label>
+                <input type="number" id="inputVanAC" value="13">
+            </div>
+
+            <div class="form-group">
+                <label>VAN PP</label>
+                <input type="number" id="inputVanPP" value="15">
+            </div>
+
+            <div class="form-group">
+                <label>VAN BA</label>
+                <input type="number" id="inputVanBA" value="34">
+            </div>
+
+        </div>
+
+
+        <!-- AGIHAN -->
+
+        <div class="update-section">
+
+            <div class="update-section-title">
+                👥 AGIHAN SHIFT
+            </div>
+
+            <div class="form-group">
+                <label>SHIFT</label>
+                <input type="number" id="inputShift" value="55">
+            </div>
+
+            <div class="form-group">
+                <label>DIRECT</label>
+                <input type="number" id="inputDirect" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>SPLIT</label>
+                <input type="number" id="inputSplit" value="0">
+            </div>
+
+        </div>
+
+
+        <!-- SPARE -->
+
+        <div class="update-section">
+
+            <div class="update-section-title">
+                🔧 SPARE
+            </div>
+
+            <div class="form-group">
+                <label>SPARE BC</label>
+                <input type="number" id="inputSpareBC" value="10">
+            </div>
+
+            <div class="form-group">
+                <label>SPARE VC</label>
+                <input type="number" id="inputSpareVC" value="12">
+            </div>
+
+        </div>
+
+
+        <!-- HASIL & PENUMPANG -->
+
+        <div class="update-section">
+
+            <div class="update-section-title">
+                💰 HASIL & PENUMPANG
+            </div>
+
+            <div class="form-group">
+                <label>HASIL (RM)</label>
+                <input type="number" id="inputHasil" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>PENUMPANG</label>
+                <input type="number" id="inputPenumpang" value="0">
+            </div>
+
+        </div>
+
+
+        <!-- ROD -->
+
+        <div class="update-section">
+
+            <div class="update-section-title">
+                ⚠️ ROD
+            </div>
+
+            <div class="form-group">
+                <label>MINOR ROD</label>
+                <input type="number" id="inputMinor" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>RTAX</label>
+                <input type="number" id="inputRTAX" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>VAN ROD</label>
+                <input type="number" id="inputVanROD" value="0">
+            </div>
+
+        </div>
+
+
+        <!-- KETIDAKHADIRAN -->
+
+        <div class="update-section">
+
+            <div class="update-section-title">
+                🕒 KETIDAKHADIRAN
+            </div>
+
+            <div class="form-group">
+                <label>ABS</label>
+                <input type="number" id="inputABS" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>MC</label>
+                <input type="number" id="inputMC" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>EL</label>
+                <input type="number" id="inputEL" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>KHO</label>
+                <input type="number" id="inputKHO" value="0">
+            </div>
+
+        </div>
+
+
+        <!-- BUTTON -->
 
         <div class="modal-actions">
 
             <button
                 class="btn"
-                onclick="closeUpdate()"
-            >
+                onclick="closeUpdate()">
                 Batal
             </button>
 
             <button
                 class="btn btn-primary"
-                onclick="saveUpdate()"
-            >
-                Simpan
+                onclick="saveUpdate()">
+                💾 Simpan
             </button>
 
         </div>
@@ -1201,9 +1378,6 @@ td {
     </div>
 
 </div>
-
-
-
 <script>
 
 /* =====================================================
@@ -1226,6 +1400,30 @@ function closeUpdate() {
 
 function saveUpdate() {
 
+    const ac =
+        document.getElementById("inputAC").value;
+
+    const pp =
+        document.getElementById("inputPP").value;
+
+    const ba =
+        document.getElementById("inputBA").value;
+
+
+    // OPERASI
+    document.getElementById("ac").innerText = ac;
+    document.getElementById("pp").innerText = pp;
+    document.getElementById("ba").innerText = ba;
+
+
+    // Tutup popup
+    closeUpdate();
+
+
+    // Mesej
+    alert("Data operasi berjaya dikemaskini!");
+
+}
     const ac =
         document.getElementById("inputAC").value;
 
